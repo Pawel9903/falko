@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'PageController@index')->name('page.index');
+Route::get('/gallery', 'PageController@gallery')->name('page.gallery');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
 });
