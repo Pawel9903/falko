@@ -11,6 +11,10 @@
 |
 */
 
+
+Route::get('locale/{locale?}', array('as'=>'set-locale',
+    'uses'=>'LanguageController@setLocale'));
+
 Route::get('/', 'PageController@index')->name('page.index');
 Route::get('/gallery', 'PageController@gallery')->name('page.gallery');
 

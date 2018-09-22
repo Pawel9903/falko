@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ Config::get('app.locale') }}">
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
     <title>stock | Interactive Photography Template</title>
@@ -23,9 +23,8 @@
     <link href="{{ asset('css/stock-style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/queries-stock.css') }}" media="all" rel="stylesheet" type="text/css">
     {{--<link href="{{ asset('css/template.css') }}">--}}
-    <link href="{{ asset('css/custom.css') }}">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet" type="text/css">
 </head>
-
 @include('layout.top_menu')
 
     @yield('content')

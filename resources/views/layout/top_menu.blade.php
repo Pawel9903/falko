@@ -1,6 +1,15 @@
 <!-- nav -->
 <div class="navbar-default navbar-fixed-top">
     <div class="container-fluid">
+
+        <div class="lang-container">
+            <nav>
+                <ul class = "lang_menu">
+                    <li class = "language {{ (Config::get('app.locale') == 'pl') ? 'active' : '' }}"><a href ="{{ url('/locale/pl') }}"><img src="{{ asset('images/lang-pl.png') }}" width="16" height="16">  Polski</a></li>
+                    <li class = "language {{ (Config::get('app.locale') == 'en') ? 'active' : '' }}"><a href ="{{ url('/locale/en') }}"><img src="{{ asset('images/lang-en.png') }}" width="16" height="16">  English</a></li>
+                </ul>
+            </nav>
+        </div>
         <div class="row">
 
             <!-- menu mobile display -->

@@ -83,18 +83,12 @@
 
             <!-- main gallery small -->
             <div id="projectsSmall" class="owl-carousel">
-                <div class="item"><img alt="#" src="img/gallery-home/1.jpg"></div>
-                <div class="item"><img alt="#" src="img/gallery-home/2.jpg"></div>
-                <div class="item"><img alt="#" src="img/gallery-home/3.jpg"></div>
-                <div class="item"><img alt="#" src="img/gallery-home/4.jpg"></div>
-                <div class="item"><img alt="#" src="img/gallery-home/5.jpg"></div>
-                <div class="item"><img alt="#" src="img/gallery-home/6.jpg"></div>
-                <div class="item"><img alt="#" src="img/gallery-home/7.jpg"></div>
-                <div class="item"><img alt="#" src="img/gallery-home/8.jpg"></div>
-                <div class="item"><img alt="#" src="img/gallery-home/9.jpg"></div>
-                <div class="item"><img alt="#" src="img/gallery-home/10.jpg"></div>
+                @foreach($sliders as $slider)
+                    <div class="item"><img alt="{{ $slider->header }}" src="{{ asset('storage/'.$slider->image) }}"></div>
+                @endforeach
             </div>
             <!-- main gallery small end -->
+
 
         </div>
         <!-- gallery end -->

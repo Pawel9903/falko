@@ -17,10 +17,6 @@ class CreateImagesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('image');
-            $table->integer('image_category_id')->unsigned();
-            $table->foreign('image_category_id')->references('id')->on('image_categories');
-            $table->integer('slider_id')->unsigned();
-            $table->foreign('slider_id')->references('id')->on('sliders');
             $table->timestamps();
         });
     }

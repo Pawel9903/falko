@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateImageCategoriesTable extends Migration
+class CreateGalleriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateImageCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('image_categories', function (Blueprint $table) {
+        Schema::create('galleries', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('image');
+            $table->string('header');
+            $table->text('description')->nullable();
             $table->integer('locale_id')->unsigned();
             $table->foreign('locale_id')->references('id')->on('locales');
             $table->timestamps();
@@ -29,6 +31,6 @@ class CreateImageCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('image_categories');
+        Schema::dropIfExists('galleries');
     }
 }

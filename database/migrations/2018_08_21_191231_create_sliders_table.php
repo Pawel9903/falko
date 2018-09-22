@@ -18,6 +18,8 @@ class CreateSlidersTable extends Migration
             $table->string('header');
             $table->string('subheader');
             $table->string('link');
+            $table->integer('locale_id')->unsigned();
+            $table->foreign('locale_id')->references('id')->on('locales');
             $table->timestamps();
         });
     }
