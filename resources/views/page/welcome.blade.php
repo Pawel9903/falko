@@ -1,6 +1,4 @@
-@extends('layout.master')
-
-@section('content')
+@include('layout.head')
     <body class="home">
     <!-- preloader -->
     <div class="bg-preloader"></div>
@@ -9,6 +7,8 @@
             <img class="logo-preloader" alt="preloaderlogo" src="{{ asset('img/logo-preloader.png') }}"> <span>loading</span>
         </div>
     </div>
+
+    @include('layout.top_menu')
     <!-- preloader end -->
 <!-- main menu -->
 <!-- content wraper -->
@@ -145,4 +145,11 @@
 
 </div>
 <!-- content wraper end -->
-@endsection
+
+    {{--<script src="{{ asset('js/template.js') }}" type="text/javascript"></script>--}}
+    <!-- plugin JS -->
+    <script src="{{ asset('plugin/pluginsstock.js') }}" type="text/javascript"></script>
+    <!-- stock JS -->
+    <script src="{{ asset('js/stock.js') }}" type="text/javascript"></script>
+    </body>
+</html>
