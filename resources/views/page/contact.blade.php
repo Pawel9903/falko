@@ -55,19 +55,19 @@
                             <!-- address -->
                             <div class="col-md-4 col-xs-12 onStep" data-animation="fadeInUp" data-time="300">
                                 <h5>HERE YOU FIND US</h5>
-                                <p>{{ $contact->address }}</p>
+                                <p>{{ $info->address }}</p>
                                 <div class="space-half"></div>
                             </div>
 
                             <div class="col-md-3 col-xs-12 onStep" data-animation="fadeInUp" data-time="600">
                                 <h5>CALL US</h5>
-                                <p>{{ $contact->phone }}</p>
+                                <p>{{ $info->phone }}</p>
                                 <div class="space-half"></div>
                             </div>
 
                             <div class="col-md-4 col-xs-12 onStep" data-animation="fadeInUp" data-time="900">
                                 <h5>EMAIL US</h5>
-                                <a class="link"  href="mailto:service@stock.com?Subject=Hello%20There">{{ $contact->email }}</a>
+                                <a class="link"  href="mailto:service@stock.com?Subject=Hello%20There">{{ $info->email }}</a>
                                 <div class="space-half"></div>
                             </div>
                             <!-- address end -->

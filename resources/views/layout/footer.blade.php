@@ -9,8 +9,7 @@
                 </div>
 
                 <p>
-                    Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida
-                    id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa adipiscing.
+                    {{ $info->description }}
                 </p>
             </div>
 
@@ -20,8 +19,7 @@
                 </h3>
 
                 <address>
-                    <span>129 Park street, New York City, NY 10903</span> <span><strong>PHONE:</strong> (+6221) 000 888 999</span> <span><strong>EMAIL:</strong> <a href=
-                                                                                                                                                                    "mailto:companyname@gmail.com">companyname@gmail.com</a></span> <span><strong>SITE:</strong> <a href="#">www.companyname.com</a></span>
+                    <span>{{ $info->address }}</span> <span><strong>PHONE:</strong> {{ $info->phone }}</span> <span><strong>EMAIL:</strong> <a href="mailto:{{$info->email}}">{{$info->email}}</a></span> <span><strong>SITE:</strong> <a href="{{$info->site}}">{{$info->site}}</a></span>
                 </address>
             </div>
 
@@ -99,11 +97,10 @@
             <div class="col-md-6">
                 <div class="right">
                     <div class="footer-icons">
-                        <a  href="#"><span class="ti-facebook"></span></a>
-                        <a  href="#"><span class="ti-twitter"></span></a>
-                        <a  href="#"><span class="ti-instagram"></span></a>
-                        <a  href="#"><span class="ti-dribbble"></span></a>
-                        <a  href="#"><span class="ti-linkedin"></span></a>
+                        <a  href="{{ $info->fb }}"><span class="ti-facebook"></span></a>
+                        <a  href="{{ $info->twitter }}"><span class="ti-twitter"></span></a>
+                        <a  href="{{ $info->instagram }}"><span class="ti-instagram"></span></a>
+                        <a  href="{{ $info->linkedin }}"><span class="ti-linkedin"></span></a>
                     </div>
                 </div>
             </div>

@@ -105,11 +105,10 @@
                                         <!-- spacer end -->
 
                                         <div class="social-icons onStep" data-animation="fadeInDown" data-time="1200">
-                                            <a  href="#"><span class="ti-facebook"></span></a>
-                                            <a  href="#"><span class="ti-twitter"></span></a>
-                                            <a  href="#"><span class="ti-instagram"></span></a>
-                                            <a  href="#"><span class="ti-dribbble"></span></a>
-                                            <a  href="#"><span class="ti-linkedin"></span></a>
+                                            <a  href="{{ $info->fb }}"><span class="ti-facebook"></span></a>
+                                            <a  href="{{ $info->twitter }}"><span class="ti-twitter"></span></a>
+                                            <a  href="{{ $info->instagram }}"><span class="ti-instagram"></span></a>
+                                            <a  href="{{ $info->linkedin }}"><span class="ti-linkedin"></span></a>
                                         </div>
 
 

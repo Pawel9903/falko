@@ -2,7 +2,7 @@
 <html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
-    <title>stock | Interactive Photography Template</title>
+    <title>Falkiewicz photo</title>
     <meta content="" name="description">
     <meta content="" name="author">
     <meta content="" name="keywords">

@@ -107,7 +107,7 @@
                     <div class="col-md-7 pull-left">
                         <div class="onStep" data-animation="fadeInLeft" data-time="300">
                             <div class="main-text onStep" data-animation="fadeInLeft" data-time="300">
-                                Quisquam deserunt nostrum venenatis consectetuer?
+                                Podobają Ci się moję pracę?
                             </div>
                         </div>
                     </div>
@@ -115,7 +115,7 @@
                     <div class="col-md-5">
                         <div class="right">
                             <div class="btn-yellow onStep" data-animation="fadeInRight" data-time="600">
-                                <a href="#">Let us know</a>
+                                <a href="{{ route('page.contact') }}">Napisz do mnie</a>
                             </div>
                         </div>
                     </div>

@@ -6,6 +6,7 @@ use App\About;
 use App\Contact;
 use App\Gallery;
 use App\ImageCategory;
+use App\Info;
 use App\Offer;
 use App\OfferList;
 use App\OfferPage;
@@ -35,14 +36,16 @@ class PageController extends Controller
 
     public function about()
     {
+        $info = Info::first();
         $about = About::where('locale_id', Session::get('locale_number',1))->first();
-        return view('page.about', ['about'=>$about]);
+        return view('page.about', ['about'=>$about, 'info'=>$info]);
     }
 
     public function contact()
     {
+        $info = Info::first();
         $contact = Contact::first();
-        return view('page.contact', ['contact'=>$contact]);
+        return view('page.contact', ['contact'=>$contact, 'info' => $info]);
     }
 
     public function offer()
