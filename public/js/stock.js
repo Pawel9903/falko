@@ -132,9 +132,9 @@ loader.fadeOut('slow', function() {
   
   
  // contact form
- $(function(){$('#send').on('click', function(e) {
- e.preventDefault();var e=$('#name').val(),a=$('#email').val(),s=$('#message').val(),r=!1;if(0==a.length||"-1"==a.indexOf("@")||"-1"==a.indexOf( ".")){var r=!0;$("#error_email").fadeIn(500)}else $("#error_email").fadeOut(500);if(0==s.length){var r=!0;$("#error_message").fadeIn(500)}else $( "#error_message").fadeOut(500);return 0==r&&($("#send").attr({disabled:"true",value:"Loading..."}),$.ajax({type:"POST",url:"send.php",data:"name="+e+"&email="+a+"&subject=You Got Email&message="+s,success:function(e){"success"==e?($(".smart-btn").remove(),$("#mail_success").fadeIn(500)):($("#mail_failed").html(e).fadeIn(500),$("#send").removeAttr("disabled").attr("value","send").remove())}})),!1})});
- 
+ // $(function(){$('#send').on('click', function(e) {
+ // e.preventDefault();var e=$('#name').val(),a=$('#email').val(),s=$('#message').val(),r=!1;if(0==a.length||"-1"==a.indexOf("@")||"-1"==a.indexOf( ".")){var r=!0;$("#error_email").fadeIn(500)}else $("#error_email").fadeOut(500);if(0==s.length){var r=!0;$("#error_message").fadeIn(500)}else $( "#error_message").fadeOut(500);return 0==r&&($("#send").attr({disabled:"true",value:"Loading..."}),$.ajax({type:"POST",url:"send.php",data:"name="+e+"&email="+a+"&subject=You Got Email&message="+s,success:function(e){"success"==e?($(".smart-btn").remove(),$("#mail_success").fadeIn(500)):($("#mail_failed").html(e).fadeIn(500),$("#send").removeAttr("disabled").attr("value","send").remove())}})),!1})});
+ //
 
 });
 // HTML document is loaded end

@@ -23,15 +23,28 @@ class PageController extends Controller
             Session::put('locale_number',1);
         }
 
+        $info = Info::first();
+
         $sliders = Slider::where('locale_id', Session::get('locale_number',1))->get();
-        return view('page.welcome', ['sliders' => $sliders]);
+        return view('page.welcome', ['sliders' => $sliders, 'info' => $info]);
     }
 
-    public function gallery()
+    public function gallery($id, $name)
     {
         $categories = ImageCategory::where('locale_id', Session::get('locale_number',1))->get();
-        $gallery = Gallery::where('locale_id', Session::get('locale_number',1))->first();
-        return view('page.gallery', ['categories' => $categories, 'gallery' => $gallery]);
+        $current_category = ImageCategory::find($id);
+
+        $galleries = $current_category->images;
+        //        $galleries = Gallery::where('locale_id', Session::get('locale_number',1))->get();
+//        $gallery = $category->images();
+        return view('page.gallery', ['current_category' => $current_category, 'galleries' => $galleries, 'categories' => $categories]);
+    }
+
+    public function galleryCategories()
+    {
+        $categories = ImageCategory::where('locale_id', Session::get('locale_number',1))->get();
+//        $gallery = Gallery::where('locale_id', Session::get('locale_number',1))->first();
+        return view('page.gallery-categories', ['categories' => $categories]);
     }
 
     public function about()
@@ -52,7 +65,7 @@ class PageController extends Controller
     {
         $offerPage = OfferPage::first();
         $offerCategories = Offer::where('locale_id', Session::get('locale_number',1))->get();
-        $offerList = OfferList::where('locale_id', Session::get('locale_number',1))->get();
-        return view('page.offer', ['offerPage' => $offerPage, 'offerCategories' => $offerCategories, 'offerList' => $offerList]);
+//        $offerList = OfferList::where('locale_id', Session::get('locale_number',1))->get();
+        return view('page.offer', ['offerPage' => $offerPage, 'offerCategories' => $offerCategories]);
     }
 }

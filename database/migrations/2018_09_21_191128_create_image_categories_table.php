@@ -16,6 +16,7 @@ class CreateImageCategoriesTable extends Migration
         Schema::create('image_categories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('image');
             $table->integer('locale_id')->unsigned();
             $table->foreign('locale_id')->references('id')->on('locales');
             $table->timestamps();

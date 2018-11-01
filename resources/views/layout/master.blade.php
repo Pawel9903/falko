@@ -8,7 +8,7 @@
                 <div class="bg-preloader"></div>
                 <div class="preloader">
                     <div class="mainpreloader">
-                        <img class="logo-preloader" alt="preloaderlogo" src="{{ asset('img/logo-preloader.png') }}"> <span>loading</span>
+                        <img class="logo-preloader" alt="preloaderlogo" src="{{ asset('img/logo-preloader.png') }}"> <span>@lang('messages.loading')</span>
                     </div>
                 </div>
                 <!-- preloader end -->

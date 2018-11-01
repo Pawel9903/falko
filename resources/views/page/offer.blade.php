@@ -1,33 +1,65 @@
 @extends('layout.master')
 
+@section('title', 'Oferta - falkiewiczphoto.pl')
+@section('desc', "W cenniku możesz znaleźć interesującą Cię oferte oraz zakres uług jakie oferuję.")
+
 @section('content')
 
     <!-- subtitle -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="no-gutter">
+    {{--<div class="container-fluid">--}}
+        {{--<div class="row">--}}
+            {{--<div class="no-gutter">--}}
 
-                <!-- main subtitle -->
-                <div class="onStep" data-animation="fadeInLeft" data-time="0">
-                    <div class="imgbg-page" style="background-image:url({{ asset('storage/'.$offerPage->image) }})"></div>
+                {{--<!-- main subtitle -->--}}
+                {{--<div class="onStep" data-animation="fadeInLeft" data-time="0">--}}
+                    {{--<div class="imgbg-page" style="background-image:url({{ asset('storage/'.$offerPage->image) }})"></div>--}}
 
-                    <!-- subtitle -->
-                    <div class="col-md-12 overlay-clasic">
-                        <div class="subtitle">
-                            <h2>
-                                Oferta
-                            </h2>
-                        </div>
+                    {{--<!-- subtitle -->--}}
+                    {{--<div class="col-md-12 overlay-clasic">--}}
+                        {{--<div class="subtitle">--}}
+                            {{--<h2>--}}
+                                {{--@lang('messages.offer')--}}
+                            {{--</h2>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<!-- subtitle end -->--}}
+
+                {{--</div>--}}
+                {{--<!-- main subtitle end -->--}}
+
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+    <!-- subtitle end -->
+
+    <div class="row">
+        <div class="c-header-container col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 pull-left">
+
+            <!-- row content -->
+            <div class="row">
+
+                <!-- article -->
+                <div class="col-md-12">
+
+                    <!-- spacer-->
+                    <div class="space-single hidden-sm hidden-xs">
                     </div>
-                    <!-- subtitle end -->
+                    <!-- spacer-->
+
+                    <h1 class="onStep c-h1" data-animation="fadeInRight" data-time="600">
+                        @lang('messages.offer') <span class="devider"></span>
+                    </h1>
 
                 </div>
-                <!-- main subtitle end -->
+                <!-- article end -->
 
             </div>
+            <!-- row content end -->
         </div>
     </div>
-    <!-- subtitle end -->
+
+    {{--<h1 class="c-header">@lang('messages.offer')</h1>--}}
+
 
     <!-- section blog -->
     <section class="whitepage no-bottom no-top offer-container">
@@ -44,14 +76,14 @@
                                 <!-- article -->
                                 <article class="">
                                     <div class="post-image col-md-6">
-                                        <img alt="blog-img" class="img-responsive" src="{{ 'storage/'.$category->image }}">
+                                        <img alt="blog-img" class="img-responsive" src="{{ 'public/storage/'.$category->image }}">
                                     </div>
                                     <div class="col-md-6">
                                             <h5 class="offer-header">{{ $category->header }}</h5>
                                                 {{--@php--}}
                                                 {{--$get_category = $category->offerList::where('locale_id', Session::get('locale_number',1))->get()--}}
                                                 {{--@endphp--}}
-                                           {!! $offerList[$category->id-1]->text !!}
+                                           {!! $category->offerList->text !!}
                                     </div>
                                 </article>
                                 <!-- article end -->

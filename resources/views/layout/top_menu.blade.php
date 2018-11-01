@@ -25,11 +25,22 @@
             <div class="menu-init" id="main-menu">
                 <nav>
                     <ul>
-                        <li class="onStep" data-animation="fadeInRight" data-time="100"><a class="actived link" href="{{ route('page.index') }}">Home</a></li>
-                        <li class="onStep" data-animation="fadeInRight" data-time="300"><a class="link"  href="{{ route('page.gallery') }}">Gallery</a></li>
-                        <li class="onStep" data-animation="fadeInRight" data-time="200"><a class="link" href="{{ route('page.about') }}">About Me</a></li>
-                        <li class="onStep" data-animation="fadeInRight" data-time="600"><a class="link"  href="{{ route('page.offer') }}">Offer</a></li>
-                        <li class="onStep" data-animation="fadeInRight" data-time="600"><a  href="{{ route('page.contact') }}">Contact</a></li>
+                        <li class="onStep" data-animation="fadeInRight" data-time="100"><a class="{{ \Request::route()->getName()
+ ==  'page.index' ? 'actived' : ''}} link" href="{{ route('page.index') }}">@lang('messages.home')</a></li>
+                        <li class="onStep" data-animation="fadeInRight" data-time="300"><a class="{{ \Request::route()->getName()
+ ==  'page.gallery' || \Request::route()->getName()
+ ==  'page.gallery.categories'? 'actived' : ''}} link"  href="{{ route('page.gallery.categories') }}">@lang('messages.gallery')</a></li>
+                        <li class="onStep" data-animation="fadeInRight" data-time="200"><a class="{{ \Request::route()->getName()
+ ==  'page.about' ? 'actived' : ''}} link" href="{{ route('page.about') }}">@lang('messages.about')</a></li>
+                        <li class="onStep" data-animation="fadeInRight" data-time="600"><a class="{{ \Request::route()->getName()
+ ==  'page.offer' ? 'actived' : ''}} link"  href="{{ route('page.offer') }}">@lang('messages.offer')</a></li>
+                        <li class="onStep" data-animation="fadeInRight" data-time="600"><a class="{{ \Request::route()->getName()
+ ==  'page.contact' ? 'actived' : ''}} link"  href="{{ route('page.contact') }}">@lang('messages.contact')</a></li>
+                        @if(Config::get('app.locale') == 'en')
+                            <li  data-animation="fadeInRight" data-time="600" class="onStep {{ (Config::get('app.locale') == 'pl') ? 'active' : '' }}"><a class="link" href ="{{ url('/locale/pl') }}">  Polski</a></li>
+                        @elseif(Config::get('app.locale') == 'pl')
+                            <li  data-animation="fadeInRight" data-time="600" class="onStep {{ (Config::get('app.locale') == 'en') ? 'active' : '' }}"><a class="link" href ="{{ url('/locale/en') }}">  English</a></li>
+                        @endif
                     </ul>
                 </nav>
             </div>

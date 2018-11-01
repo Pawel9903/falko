@@ -2,21 +2,31 @@
   padding: 45% 0 0 5%;
 }
 
+img.mfp-img {
+  padding: 10px 0;
+  width: auto;
+}
+
+.mfp-container {
+  padding: 0;
+}
+
 .c-categories {
   padding-right: 15px;
   padding-left: 15px;
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  list-style: none;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
-.imgbg-page {
-  height: 50vh;
-}
-
-.gallery-div {
-  padding-top: 0;
-}
-
-.gallery-div div {
-  padding-top: 0;
+#filter-porto {
+  text-align: center;
 }
 
 .whitepage * {
@@ -29,5 +39,42 @@
 
 .offer-container {
   padding-bottom: 35px !important;
+}
+
+.error {
+  display: block;
+  color: red !important;
+}
+
+.c-header {
+  padding: 100px 0 0 0;
+  text-align: center;
+  font-family: Raleway, sans-serif;
+}
+
+.c-header-container {
+  padding-top: 50px;
+}
+
+@media (max-width: 1024px) {
+  .c-header-container {
+    padding-top: 120px;
+  }
+}
+
+.c-h1 {
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 1024px) {
+  .c-h1 {
+    font-size: 20px;
+  }
+}
+
+a.link {
+  font-size: 15px;
+  font-weight: 900;
 }
 

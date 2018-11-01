@@ -1,0 +1,27 @@
+$desktop-width: 1024px;
+
+.c-header{
+  padding: 100px 0 0 0;
+  text-align: center;
+  font-family:Raleway, sans-serif;
+}
+
+.c-header-container{
+  padding-top: 50px;
+  @media  (max-width: #{$desktop-width}){
+    padding-top: 120px;
+  }
+}
+
+.c-h1{
+  font-weight: 600;
+  letter-spacing: 2px;
+  @media  (max-width: #{$desktop-width}){
+    font-size: 20px;
+  }
+}
+
+a.link{
+  font-size: 15px;
+  font-weight: 900;
+}

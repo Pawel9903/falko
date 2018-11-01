@@ -1,10 +1,14 @@
 @include('layout.head')
+
+@section('title', 'Strona Główna - falkiewiczphoto.pl')
+@section('desc', "Sesje ślubne, eventy, kultura, sport, portret. Witaj na mojej stronie gdzie możesz znaleźć oferowane przeze mnie usługi w zakresie profesjonalnej fotografi. Zapraszam do zapoznania się z moją ofertą, galerią i napisania wiadomości w formularzu kontaktowym.")
+
     <body class="home">
     <!-- preloader -->
     <div class="bg-preloader"></div>
     <div class="preloader">
         <div class="mainpreloader">
-            <img class="logo-preloader" alt="preloaderlogo" src="{{ asset('img/logo-preloader.png') }}"> <span>loading</span>
+            <img class="logo-preloader" alt="preloaderlogo" src="{{ asset('img/logo-preloader.png') }}"> <span>@lang('messages.loading')</span>
         </div>
     </div>
 
@@ -30,12 +34,12 @@
                                  {{ $slider->subheader }}
                             </h1>
 
-                            <h3 class="onStep" data-animation="fadeInLeft" data-time="600">
+                            <h3 class="onStep c-h1" data-animation="fadeInLeft" data-time="600">
                                 {{ $slider->header }}
                             </h3>
 
                             <div class="btn-main onStep" data-animation="fadeInUp" data-time="1200">
-                                <a href="{{ $slider->link }}">Sprawdź<span class="ti-angle-right"></span></a>
+                                <a href="{{ $slider->link }}">@lang('messages.check')<span class="ti-angle-right"></span></a>
                             </div>
                         </div>
                     </div>
@@ -113,18 +117,16 @@
             <!-- content -->
             <div class="overlay-main-info v-align">
                 <div class="col-md-5 col-xs-11">
-                    <h2>
-                        Stock Art Photography
-                    </h2>
+                    <h1>
+                        @lang('messages.professional') Łukasz Falkiewicz
+                    </h1>
 
-                    <p>
-                        velit pariatur quis aute minim dolor reprehenderit in pariatur amet sit et est aute sunt id consequat amet nostrud non exercitation laboris Excepteur ex anim sint adipisicing enim id anim dolore do sint.
+                    <p><br>
+                        @lang('messages.email') <a href="mailto:{{ $info->email }}">{{ $info->email }}</a><br>
+                        @lang('messages.phone') <a href="tel: {{ $info->phone }}" >{{ $info->phone }}</a><br>
+                        @lang('messages.site') <a href="{{ $info->site }}" >{{ $info->site }}</a>
                     </p>
-
-                    <p>D / Maiden / Photographer<br>
-                        e-mail <a href="mailto:desmon25@live.com">desmon25@live.com</a>
-                    </p>
-                    <p>07 / 08 / 2017</p>
+                    {{--<p>07 / 08 / 2017</p>--}}
 
                 </div>
             </div>

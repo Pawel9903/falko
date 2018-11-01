@@ -1,4 +1,6 @@
 @extends('layout.master')
+@section('title', 'O mnie - falkiewiczphoto.pl')
+@section('desc', "Fotograf falkiewiczphoto.pl - profesjonalne sesje fotograficzne")
 @section('content')
     <!-- logo -->
     {{--<a class="navbar-brand" href="index.html"><img alt="logo" src="img/logo.png"></a>--}}
@@ -60,9 +62,9 @@
                                         </div>
                                         <!-- spacer-->
 
-                                        <h4 class="onStep" data-animation="fadeInRight" data-time="600">
+                                        <h1 class="onStep c-h1" data-animation="fadeInRight" data-time="600">
                                             {{ $about->header }} <span class="devider"></span>
-                                        </h4>
+                                        </h1>
 
                                         <h2 class="onStep" data-animation="fadeInDown" data-time="900">
                                             {{ $about->subheader }}
