@@ -29,21 +29,20 @@ class PageController extends Controller
         return view('page.welcome', ['sliders' => $sliders, 'info' => $info]);
     }
 
-    public function gallery($id, $name)
+    public function gallery($id)
     {
         $categories = ImageCategory::where('locale_id', Session::get('locale_number',1))->get();
         $current_category = ImageCategory::find($id);
 
-        $galleries = $current_category->images;
-        //        $galleries = Gallery::where('locale_id', Session::get('locale_number',1))->get();
-//        $gallery = $category->images();
-        return view('page.gallery', ['current_category' => $current_category, 'galleries' => $galleries, 'categories' => $categories]);
+        $galleries = $current_category->images()
+            ->get();
+
+        return view('page.gallery', ['current_category' => $current_category, 'galleries' => $galleries, 'categories' => $categories, 'id' => $id]);
     }
 
     public function galleryCategories()
     {
         $categories = ImageCategory::where('locale_id', Session::get('locale_number',1))->get();
-//        $gallery = Gallery::where('locale_id', Session::get('locale_number',1))->first();
         return view('page.gallery-categories', ['categories' => $categories]);
     }
 

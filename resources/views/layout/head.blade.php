@@ -7,6 +7,7 @@
     <meta content="Łukasz Falkiewicz" name="author">
     <meta content="fotografia, sesje ślubne,portret, portfolio, galeria, fotograf, zdjęcia, profesjonalny, sesje , ślub, sport, aparat, falkiewicz, łukasz, lukasz, trójmiasto" name="keywords">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- favicon -->
     <link href="{{ asset('img/favicon1.png') }}" rel="icon" sizes="32x32" type="image/png">
     <!-- Bootstrap CSS -->
@@ -24,5 +25,6 @@
     <link href="{{ asset('css/queries-stock.css') }}" media="all" rel="stylesheet" type="text/css">
     {{--<link href="{{ asset('css/template.css') }}">--}}
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet" type="text/css">
+
     <meta name="google-site-verification" content="TXt4wNODpiA_J-XNRD5bYj_skuIrKn5w5Rpoj0JuPxk" />
 </head>

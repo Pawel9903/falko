@@ -23,6 +23,7 @@ Route::get('/contact', 'PageController@contact')->name('page.contact');
 Route::get('/offer', 'PageController@offer')->name('page.offer');
 Route::post('/contact/mail', 'MailsController@contact')->name('mail.contact');
 
+Route::post('load.gallery.ajax', ['as'=>'load.gallery.ajax','uses'=>'Ajax\AjaxController@loadMoreGallery']);
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

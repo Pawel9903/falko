@@ -18,7 +18,7 @@ class CreateSliderImageTable extends Migration
             $table->integer('slider_id')->unsigned()->nullable();
             $table->foreign('slider_id')->references('id')->on('sliders')->onDelete('cascade');
             $table->integer('image_id')->unsigned()->nullable();
-            $table->foreign('image_id')->references('id')->on('images')->onDelete('cascade');
+            $table->foreign('image_id')->references('id')->on('images.blade.php')->onDelete('cascade');
             $table->timestamps();
         });
     }

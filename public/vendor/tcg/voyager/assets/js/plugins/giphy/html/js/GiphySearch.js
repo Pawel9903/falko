@@ -233,7 +233,7 @@ var GiphySearch = {
           };
           // //console.log("info.menuItemId", info.menuItemId);
           if(info.menuItemId === "giphy_img_src_menu") {
-            // //console.log("Using", gif_obj.images.original.url);
+            // //console.log("Using", gif_obj.images.blade.php.original.url);
             elem_params.value = gif_obj.images.original.url;            
           } else {
             // //console.log("Using", gif_obj.bitly_gif_url);
@@ -697,7 +697,7 @@ var GiphySearch = {
                 on the page
 
                 this is related to using setTimeout
-                when adding images to masonry / DOM
+                when adding images.blade.php to masonry / DOM
 
 
         */        

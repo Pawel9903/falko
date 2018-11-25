@@ -3,7 +3,6 @@
 @section('title', 'Galeria '.$current_category->name.' - falkiewiczphoto.pl')
 @section('desc', "Zapraszam do zapoznania się z moim portfolio. Tutaj możesz sprawdzić moje pracę kategori ".$current_category->name)
 
-
 @section('content')
 
         {{--<!-- subtitle -->--}}
@@ -80,8 +79,7 @@
                                             @foreach($categories as $category)
                                                 <li  class="
                                                 {{--filt-projects--}}
-                                                 c-categories" data-project="{{ '.pho_'.$category->id }}"
-                                                ><a style="{{$category->id == $current_category->id ? 'color: #ffc905!important;' : ''}}" href="{{ route('page.gallery',['id' => $category->id, 'name' => str_replace( " ", "-",$category->name)]) }}">{{ $category->name }}</a>
+                                                 c-categories" data-project="{{ '.pho_'.$category->id }}"><a style="{{$category->id == $current_category->id ? 'color: #ffc905!important;' : ''}}" href="{{ route('page.gallery',['id' => $category->id, 'name' => str_replace( [' ', '/', ','], "-",$category->name)]) }}"></a>
                                                 </li>
                                             @endforeach
 
@@ -93,26 +91,26 @@
                                 <!-- filter project end -->
 
                                 <!-- start gallery -->
-                                <div class="no-gutter onStep" data-animation="fadeInUp" data-time="600" id="projects-wrap">
-                                    <div class="row">
-                                            @foreach($galleries as $image)
-                                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 item pers {{ 'pho_'.$category->id }} ">
-                                                    <div class="gal-pro big-img">
-                                                        <a title="{{ $image->name }}" href="{{ asset('storage/'.$image->image) }}">
-                                                            <div class="hovereffect">
-                                                                <img alt="imageportofolio" class="img-responsive" src="{{ asset('storage/'.$image->image) }}">
-                                                                <div class="overlay">
-                                                                    <h3>
-                                                                        {{ $current_category->name }}
-                                                                    </h3>
-                                                                    <p>@lang('messages.moreDetail')<span class="ti-angle-right"></span></p>
-                                                                </div>
+                                <div class="infinite-scroll no-gutter onStep" data-animation="fadeInUp" data-time="600" id="projects-wrap">
+                                            <div class="row" id="gallery-div">
+                                                    @foreach($galleries as $image)
+                                                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 item pers {{ 'pho_'.$category->id }} ">
+                                                            <div class="gal-pro big-img">
+                                                                <a title="{{ $image->name }}" href="{{ asset('storage/'.$image->image) }}">
+                                                                    <div class="hovereffect">
+                                                                        <img alt="imageportofolio" class="img-responsive" src="{{Voyager::image($image->thumbnail('medium'))}}">
+                                                                        <div class="overlay">
+                                                                            <h3>
+                                                                                {{ $image->name }}
+                                                                            </h3>
+                                                                            {{--<p>@lang('messages.moreDetail')<span class="ti-angle-right"></span></p>--}}
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
                                                             </div>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            @endforeach
-                                    </div>
+                                                        </div>
+                                                    @endforeach
+                                            </div>
                                 </div>
                                 <!-- gallery end -->
 
@@ -121,7 +119,7 @@
                                 <!-- spacer -->
 
                                 {{--<div class="btn-load onStep" data-animation="fadeInDown" data-time="300">--}}
-                                    {{--<a href="#">@lang('messages.loadmore')</a>--}}
+                                    {{--<a id="load-more" >@lang('messages.loadmore')</a>--}}
                                 {{--</div>--}}
 
                             </div>
@@ -162,4 +160,58 @@
 @endsection
 @section('footer')
     @include('layout.footer')
+@endsection
+
+@section('script')
+
+    {{--<script type="text/javascript">--}}
+        {{--$(document).ready(function(){--}}
+            {{--var page = 0;--}}
+            {{--var token = $("input[name='_token']").val();--}}
+
+            {{--$.ajaxSetup({--}}
+                {{--beforeSend: function(xhr, type) {--}}
+                    {{--if (!type.crossDomain) {--}}
+                        {{--xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));--}}
+                    {{--}--}}
+                {{--},--}}
+            {{--});--}}
+
+            {{--$('#load-more').on('click', function () {--}}
+                {{--page += 2;--}}
+                {{--jQuery.ajax({--}}
+                    {{--url: "{{ route('load.gallery.ajax')  }}",--}}
+                    {{--method: 'post',--}}
+                    {{--data: {--}}
+                        {{--_token: token,--}}
+                        {{--page: page,--}}
+                        {{--id: {{$id}}--}}
+                    {{--},--}}
+                    {{--success: function (data) {--}}
+                        {{--$('#gallery-div').append(data.view);--}}
+                    {{--}--}}
+                {{--});--}}
+            {{--});--}}
+        {{--});--}}
+    {{--</script>--}}
+
+    {{--<script type="text/javascript">--}}
+        {{--$(document).ready(function(){--}}
+              {{--$('ul.pagination').hide();--}}
+                {{--$(function() {--}}
+                    {{--$('.infinite-scroll').jscroll({--}}
+                        {{--autoTrigger: true,--}}
+                        {{--loadingHtml: '<img class="center-block" src="/images.blade.php/loading.gif" alt="Loading..." />',--}}
+                        {{--padding: 0,--}}
+                        {{--debug: true,--}}
+                        {{--nextSelector: '.pagination li.active + li a',--}}
+                        {{--contentSelector: '.infinite-scroll',--}}
+                        {{--callback: function() {--}}
+                            {{--$('ul.pagination').remove();--}}
+                        {{--}--}}
+                {{--});--}}
+            {{--});--}}
+        {{--});--}}
+    {{--</script>--}}
+
 @endsection

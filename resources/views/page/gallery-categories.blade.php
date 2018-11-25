@@ -53,7 +53,7 @@
                                     @foreach($categories as $category)
                                         <div class=" col-md-6 col-sm-6 col-xs-12 item pers {{ 'pho_'.$category->id }} ">
                                             <div class="gal-pro">
-                                                <a title="{{ $category->name }}" href="{{ route('page.gallery',['id' => $category->id, 'name' => str_replace( " ", "-",$category->name)]) }}">
+                                                <a title="{{ $category->name }}" href="{{ route('page.gallery',['id' => $category->id, 'name' => str_replace( [' ', '/', ','], "-",$category->name)]) }}">
                                                     <div class="hovereffect">
                                                         <img alt="imageportofolio" class="img-responsive" src="{{ asset('storage/'.$category->image) }}">
                                                         <div class="overlay">

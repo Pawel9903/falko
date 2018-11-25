@@ -18,7 +18,7 @@ class CreateAboutsTable extends Migration
             $table->string('header');
             $table->text('subheader')->nullable();
             $table->text('description');
-            $table->text('images');
+            $table->text('images.blade.php');
             $table->timestamps();
         });
     }

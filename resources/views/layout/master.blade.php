@@ -26,6 +26,10 @@
                 <script src="{{ asset('plugin/pluginsstock.js') }}" type="text/javascript"></script>
                 <!-- stock JS -->
                 <script src="{{ asset('js/stock.js') }}" type="text/javascript"></script>
+                <script src="{{ asset('vendor/jscroll/dist/jquery.jscroll.min.js') }}" type="text/javascript"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.3.7/jquery.jscroll.min.js"></script>
+
+                @yield('script')
         </div>
     </body>
 </html>
